@@ -15,4 +15,15 @@ function initializePage() {
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
+	$("a.thumbnail").click(projectClick);
+}
+
+function projectClick(e) {
+	//prevent the page from reloading
+	e.preventDefault();
+
+	$(this).css("background-color", "#7fff00");
+	var containingProject = $(this).closest(".project");
+	containingProject.append("<div class='project-description'><p>Description of the project.</p></div>");
+	
 }
